@@ -4,9 +4,9 @@ import ssl
 host_addr = '127.0.0.1'
 host_port = 5000
 server_sni_hostname = 'localhost'
-client_crt = 'client_cert/client.crt'
-client_key = 'client_cert/client.key'
-server_crt = 'client_cert/server.crt'
+client_crt = 'servers/client_cert/client.crt'
+client_key = 'servers/client_cert/client.key'
+server_crt = 'servers/client_cert/server.crt'
 
 context = ssl.create_default_context(
     ssl.Purpose.SERVER_AUTH, cafile=server_crt)

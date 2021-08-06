@@ -1,9 +1,9 @@
 from flask import Flask
 import ssl
 
-server_crt = 'server_cert/server.crt'
-server_key = 'server_cert/server.key'
-client_crt = 'server_cert/client.crt'
+server_crt = 'servers/server_cert/server.crt'
+server_key = 'servers/server_cert/server.key'
+client_crt = 'servers/server_cert/client.crt'
 
 
 app = Flask(__name__)
@@ -20,4 +20,3 @@ if __name__ == "__main__":
     context.load_cert_chain(certfile=server_crt, keyfile=server_key)
     context.load_verify_locations(cafile=client_crt)
     app.run(ssl_context=context, debug=True)
-

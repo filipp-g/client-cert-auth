@@ -1,16 +1,16 @@
 {
-
-    "manifest_version": 2,
-    "name": "ClientAuth",
-    "version": "1.0",
-  
-    "description": "Adds a GUI and usability improvements to client certificate authentication.",
-  
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["script.js"]
-      }
+  "manifest_version": 2,
+  "name": "ClientAuth",
+  "version": "1.0",
+  "description": "Adds a GUI and usability improvements to client certificate authentication.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
     ]
-  
   }
+}
