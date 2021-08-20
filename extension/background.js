@@ -1,10 +1,10 @@
 
 console.log('ClientAuth extension loaded')
 
-function getInfo(details) {
-    console.log(`Got request for ${details.url} with ID ${details.requestId}`)
+function getInfo(req) {
+    console.log(`Got request for ${req.url} with ID ${req.requestId}`)
 
-    var securityInfo = browser.webRequest.getSecurityInfo(details.requestId, {
+    let securityInfo = browser.webRequest.getSecurityInfo(req.requestId, {
         certificateChain: true,
         rawDER: false
     });
